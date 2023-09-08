@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @font-face {
+          font-family: MyOTFFont3;
+          src: url("./Resource/Metropolis Medium.otf");
+        }
+        @font-face {
+          font-family: MyOTFFont4;
+          src: url("./Resource/Osake.otf");
+        }
+    
+    body {
+      background-image: url("./Resource/Wallpaper.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    </style>
+    <script>
+        function disptime(){  
+        var today=new Date();
+        var MM=today.getUTCDay();  
+        if(MM==1){
+            MM='Monday'
+        } 
+        if(MM==2){
+            MM='Tuesday'
+        } 
+        if(MM==3){
+            MM='Wednesday'
+        } 
+        if(MM==4){
+            MM='Thursday'
+        } 
+        if(MM==5){
+            MM='Friday'
+        } 
+        if(MM==6){
+            MM='Saturday'
+        } 
+        if(MM==7){
+            MM='Sunday'
+        } 
+        document.getElementById("myDay").innerText=MM
+        var month=today.getMonth()+1;
+        var date=today.getDate();
+        var year=today.getUTCFullYear();
+        if(month==1)month='January';
+        if(month==2)month='February';
+        if(month==3)month='March';
+        if(month==4)month='April';
+        if(month==5)month='May';
+        if(month==6)month='June';
+        if(month==7)month='July';
+        if(month==8)month='August';
+        if(month==9)month='September';
+        if(month==10)month='October';
+        if(month==11)month='November';
+        if(month==12)month='December';
+        document.getElementById("myDate").innerText=date+" "+month+",  "+year+"."
+    }
+    function discolock(){
+        var today=new Date();
+        var hh=today.getHours();  
+        var mm=today.getMinutes();  
+        var ss = today.getSeconds();
+        if(hh<10){hh='0'+hh;}  
+        if(mm<10){mm='0'+mm;}  
+        if(ss<10){ss='0'+ss;}  
+        document.getElementById("myclock").innerText="-"+hh+":"+mm+":"+ss+"-"
+    }
+        var mytime = setInterval("disptime()",10800000);
+        var mytime = setInterval("discolock()",1000);
+    </script>
+</head>
+<body onload="disptime()&discolock()">
+    <div style="width: 100%;text-align: center;">
+        <p id="myDay" style="font-size: 70px;font-family: MyOTFFont4;margin: 20px auto;"></p>
+        <p id="myDate" style="font-family:MyOTFFont3;font-size: 17px;margin-top: -10px;"></p>
+        <p id="myclock" style="font-family: 'Courier New', Courier, monospace;color: white;font-size: 17px;font-weight: bold;"></p>
+    </div>
+</body>
+</html>
