@@ -62,26 +62,27 @@
         if(month==10)month='October';
         if(month==11)month='November';
         if(month==12)month='December';
-        document.getElementById("myDate").innerText=date+" "+month+",  "+year+"."
+        document.getElementById("myDa").innerText=date+" "+month+",  "+year+"."
     }
     function discolock(){
         var today=new Date();
         var hh=today.getHours();  
         var mm=today.getMinutes();  
-        var ss = today.getSeconds();
+        //var ss = today.getSeconds();
         if(hh<10){hh='0'+hh;}  
         if(mm<10){mm='0'+mm;}  
-        if(ss<10){ss='0'+ss;}  
-        document.getElementById("myclock").innerText="-"+hh+":"+mm+":"+ss+"-"
+        //if(ss<10){ss='0'+ss;}  
+        document.getElementById("myclock").innerText="-"+hh+":"+mm+"-"
+        //+":"+ss+"-"
     }
-        var mytime = setInterval("disptime()",10800000);
-        var mytime = setInterval("discolock()",1000);
+        setInterval("disptime()",10800000);
+        setInterval("discolock()",1000);
     </script>
 </head>
 <body onload="disptime()&discolock()">
     <div style="width: 100%;text-align: center;">
         <p id="myDay" style="font-size: 70px;font-family: MyOTFFont4;margin: 20px auto;"></p>
-        <p id="myDate" style="font-family:MyOTFFont3;font-size: 17px;margin-top: -10px;"></p>
+        <p id="myDa" style="font-family:MyOTFFont3;font-size: 17px;margin-top: -10px;"></p>
         <p id="myclock" style="font-family: 'Courier New', Courier, monospace;color: white;font-size: 17px;font-weight: bold;"></p>
     </div>
 </body>
